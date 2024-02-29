@@ -1,4 +1,4 @@
-''' Write a program that prints the numbers from 1 to 100. For multiples of 3, print "Fizz"; for
+''' QUESTION 1: Write a program that prints the numbers from 1 to 100. For multiples of 3, print "Fizz"; for
 multiples of 5, print "Buzz"; and for numbers that are multiples of both 3 and 5, print
 "FizzBuzz". '''
 
@@ -12,7 +12,7 @@ multiples of 5, print "Buzz"; and for numbers that are multiples of both 3 and 5
     else:
         print(i)
 
-''' Write a program to generate the Fibonacci sequence up to 100.'''
+''' QUESTION 2: Write a program to generate the Fibonacci sequence up to 100.'''
 
   # Function to generate Fibonacci sequence up to a certain limit
 def fibonacci_sequence(limit):
@@ -33,3 +33,83 @@ fib_sequence = fibonacci_sequence(100)
 # Print the Fibonacci sequence
 print("Fibonacci sequence up to 100:")
 print(fib_sequence)
+
+''' QUESTION 3: Write a program that takes an integer as input and returns true if the input is a power of two. '''
+
+def is_power_of_two(n):
+    """
+    Function to check if the input integer is a power of two.
+    """
+    # Check if the input is less than or equal to 0
+    if n <= 0:
+        return False
+    
+    # Keep dividing the number by 2 until it becomes odd
+    while n % 2 == 0:
+        n //= 2
+    
+    # If the number becomes 1 after all divisions, it's a power of two
+    return n == 1
+
+# Test the function with different inputs
+num = int(input("Enter an integer: "))
+result = is_power_of_two(num)
+print(f"{num} is a power of two: {result}")
+
+'''QUESTION 4: Write a program that accepts a string as input, capitalizes the first letter of each word in the
+string, and then returns the result string. '''
+
+def capitalize_words(sentence):
+    """
+    Function to capitalize the first letter of each word in a string.
+    """
+    return sentence.title()
+
+# Test the function
+input_string = input("Enter a string: ")
+capitalized_string = capitalize_words(input_string)
+print("Capitalized string:", capitalized_string)
+
+''' QUESTION 5 Write a program that takes an integer as input and returns an integer with reversed digit
+ordering '''
+
+def reverse_integer(n):
+    """
+    Function to reverse the digit ordering of an integer.
+    """
+    # Convert the integer to a string, reverse it, and convert it back to an integer
+    reversed_str = str(n)[::-1]
+    # Handle negative numbers by keeping the sign and converting the reversed string to an integer
+    if n < 0:
+        reversed_str = "-" + reversed_str[:-1]
+    return int(reversed_str)
+
+# Test the function with user input
+num = int(input("Enter an integer: "))
+reversed_num = reverse_integer(num)
+print("Reversed integer:", reversed_num)
+
+''' QUESTION 6 Write a program that counts the number of vowels in a sentence. '''
+
+def count_vowels(sentence):
+    """
+    Function to count the number of vowels in a sentence.
+    """
+    # Define a set of vowels
+    vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'}
+    
+    # Initialize a variable to count vowels
+    vowel_count = 0
+    
+    # Iterate through each character in the sentence
+    for char in sentence:
+        # Check if the character is a vowel
+        if char in vowels:
+            vowel_count += 1
+    
+    return vowel_count
+
+# Test the function with user input
+input_sentence = input("Enter a sentence: ")
+num_vowels = count_vowels(input_sentence)
+print("Number of vowels in the sentence:", num_vowels)
